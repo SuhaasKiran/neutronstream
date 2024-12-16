@@ -10,8 +10,8 @@ import numpy as np
 base_graph_num_edges = 14
 base_graph_num_nodes = 12
 base_graph_time = 0.0
-base_dst_nodes = torch.tensor([9,8,9,6,7,2,7,3,6,1,4,1,0,5])
-base_src_nodes = torch.tensor([0,9,8,7,6,7,2,6,3,3,3,5,5,0])
+base_src_nodes = torch.tensor([9,8,9,6,7,2,7,3,6,1,4,1,0,5])
+base_dst_nodes = torch.tensor([0,9,8,7,6,7,2,6,3,3,3,5,5,0])
     
 g = dgl.graph((base_src_nodes, base_dst_nodes), num_nodes=base_graph_num_nodes)
     
@@ -51,8 +51,8 @@ dgl.save_graphs("base_graph_2.bin", data)
 print("Graph saved to 'base_graph_2.bin'")
     
 # create the events graph 1
-events_dst_nodes = torch.tensor([5,6,1,7,0,2,10,11])  # Source nodes
-events_src_nodes = torch.tensor([4,10,4,8,1,6,7,9])  # Destination nodes
+events_src_nodes = torch.tensor([5,6,1,7,0,2,10,11])  # Source nodes
+events_dst_nodes = torch.tensor([4,10,4,8,1,6,7,9])  # Destination nodes
 events_edge_feats = torch.randn(events_src_nodes.shape[0], 100, dtype=torch.float32)  # Random features with shape (100,)
 # edge_labels = torch.tensor([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0], dtype=torch.float64)  # Example labels
 events_edge_labels = torch.bernoulli(torch.empty(events_src_nodes.shape[0], dtype=torch.float64).uniform_(0, 1))
